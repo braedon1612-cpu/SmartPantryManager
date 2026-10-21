@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.Lis
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ScreenInsets.apply(findViewById(R.id.main));
+        com.example.smartpantrymanager.ui.Navigation.setup(this);
         helper = new PantryDatabaseHelper(this);
         repository = new PantryRepository(helper);
         adapter = new PantryAdapter(this);

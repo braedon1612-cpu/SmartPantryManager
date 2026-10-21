@@ -23,4 +23,17 @@
     <string name="storage_error">Could not access the pantry. Please try again.</string>
     <string name="form_hint">Units: g and kg for weight, ml and l for volume, piece for individual items.</string>
     <string-array name="pantry_units"><item>g</item><item>kg</item><item>ml</item><item>l</item><item>piece</item></string-array>
+    <string name="suggested_title">Suggested Recipes</string>
+    <string name="strict_explanation">Only recipes with every ingredient available in the required quantity appear here.</string>
+    <string name="no_recipes">No recipes match your pantry yet. Add more ingredients or check your quantities and units.</string>
+    <string name="view_recipe">View recipe</string>
+    <string name="required_ingredients">Required ingredients</string>
+    <string name="method">Preparation</string>
+    <string name="recipe_missing">This recipe could not be found.</string>
+    <string name="back_to_recipes">Back to recipes</string>
+    <string name="ingredient_line">• %1$s: %2$s %3$s</string>
+    <string name="recipe_count">%1$d required ingredients</string>
+    <string name="recipes_error">Could not load recipes. Return to your pantry and try again.</string>
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_recipes">Recipes</string>
 </resources>

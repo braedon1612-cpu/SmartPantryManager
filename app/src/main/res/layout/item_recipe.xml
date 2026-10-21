@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:paddingTop="20dp" android:paddingBottom="12dp" android:orientation="vertical">
+    <TextView android:id="@+id/recipeName" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="20sp" android:textStyle="bold"/>
+    <TextView android:id="@+id/recipeCount" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="4dp"/>
+    <Button android:id="@+id/viewRecipe" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="@string/view_recipe"/>
+</LinearLayout>

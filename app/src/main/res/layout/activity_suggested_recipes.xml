@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="20dp">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/navigationToolbar"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/suggested_title" android:textSize="28sp" android:textStyle="bold"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/strict_explanation" android:layout_marginTop="8dp"/>
+    <TextView android:id="@+id/emptyRecipes" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:paddingTop="24dp" android:text="@string/no_recipes"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recipeList"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:paddingBottom="12dp" android:clipToPadding="false"/>
+</LinearLayout>
