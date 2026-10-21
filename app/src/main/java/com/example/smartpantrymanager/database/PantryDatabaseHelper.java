@@ -4,10 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/** Owns schema creation. CRUD, seeding and matching follow in later steps. */
+/** Owns schema creation and non-destructive version migrations. */
 public class PantryDatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "smart_pantry.db";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String TABLE_PANTRY = "Pantry";
     public static final String TABLE_RECIPES = "Recipes";
     public static final String TABLE_RECIPE_INGREDIENTS = "RecipeIngredients";
@@ -53,12 +53,16 @@ public class PantryDatabaseHelper extends SQLiteOpenHelper {
                 "unit TEXT NOT NULL CHECK(length(trim(unit)) > 0), " +
                 "FOREIGN KEY(recipe_id) REFERENCES Recipes(_id) ON DELETE CASCADE, " +
                 "UNIQUE(recipe_id, ingredient_key))");
+
+        RecipeSeeder.seed(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Future versions must provide migrations that preserve pantry data.
-        throw new IllegalStateException("Missing migration from " +
-                oldVersion + " to " + newVersion);
+        if (oldVersion < 2) {
+            // Version 1 had empty recipe tables. Pantry rows are preserved.
+            // SQLiteOpenHelper wraps this upgrade in a transaction.
+            RecipeSeeder.seed(db);
+        }
     }
 }
