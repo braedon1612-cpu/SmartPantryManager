@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <Button android:id="@+id/backToPantry" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/back"/>
+        <TextView android:id="@+id/formTitle" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/add_ingredient"
+            android:textSize="28sp" android:textStyle="bold" android:layout_marginTop="16dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="@string/name_label" android:labelFor="@id/nameInput"/>
+        <EditText android:id="@+id/nameInput" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:inputType="textCapWords" android:maxLength="100" android:maxLines="1"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/quantity_label" android:labelFor="@id/quantityInput"/>
+        <EditText android:id="@+id/quantityInput" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:inputType="numberDecimal" android:maxLength="16" android:maxLines="1"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/unit_label" android:labelFor="@id/unitInput"/>
+        <Spinner android:id="@+id/unitInput" android:layout_width="match_parent"
+            android:layout_height="48dp" android:entries="@array/pantry_units"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/form_hint" android:layout_marginTop="12dp"/>
+        <Button android:id="@+id/saveIngredient" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="@string/save" android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>

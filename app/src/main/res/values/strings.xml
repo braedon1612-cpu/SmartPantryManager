@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Smart Pantry Manager</string>
+    <string name="pantry_title">My Pantry</string>
+    <string name="pantry_subtitle">Keep track of what you have. Use what you own.</string>
+    <string name="add_ingredient">Add ingredient</string>
+    <string name="empty_pantry">Your pantry is empty. Add your first ingredient.</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save ingredient</string>
+    <string name="name_label">Ingredient name (for example, eggs)</string>
+    <string name="quantity_label">Quantity</string>
+    <string name="unit_label">Unit</string>
+    <string name="back">Back to pantry</string>
+    <string name="edit_title">Edit ingredient</string>
+    <string name="delete_title">Delete ingredient?</string>
+    <string name="delete_message">Remove %1$s from your pantry?</string>
+    <string name="stock_amount">%1$s %2$s</string>
+    <string name="item_missing">This ingredient no longer exists.</string>
+    <string name="saved">Ingredient saved</string>
+    <string name="deleted">Ingredient deleted</string>
+    <string name="number_error">Enter a valid quantity.</string>
+    <string name="storage_error">Could not access the pantry. Please try again.</string>
+    <string name="form_hint">Units: g and kg for weight, ml and l for volume, piece for individual items.</string>
+    <string-array name="pantry_units"><item>g</item><item>kg</item><item>ml</item><item>l</item><item>piece</item></string-array>
 </resources>
