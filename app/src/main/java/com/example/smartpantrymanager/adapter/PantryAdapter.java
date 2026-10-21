@@ -19,6 +19,8 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.Holder> {
     }
     private final List<Ingredient> items = new ArrayList<>();
     private final Listener listener;
+    private final java.util.Set<Long> appearedIds = new java.util.HashSet<>();
+
 
     public PantryAdapter(Listener listener) {
         this.listener = listener;
@@ -44,6 +46,10 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.Holder> {
 
     @Override public void onBindViewHolder(@NonNull Holder holder, int position) {
         Ingredient item = items.get(position);
+        boolean firstAppearance = appearedIds.add(item.getId());
+        com.example.smartpantrymanager.ui.RowMotion.bind(
+                holder.itemView, firstAppearance && position < 8, position);
+
         holder.name.setText(item.getName());
         holder.amount.setText(holder.itemView.getContext().getString(R.string.stock_amount,
                 NumberFormat.getNumberInstance().format(item.getQuantity()), item.getUnit()));
@@ -51,6 +57,11 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.Holder> {
                 .setOnClickListener(v -> listener.onEdit(item));
         holder.itemView.findViewById(R.id.deleteIngredient)
                 .setOnClickListener(v -> listener.onDelete(item));
+    }
+
+    @Override public void onViewRecycled(@NonNull Holder holder) {
+        com.example.smartpantrymanager.ui.RowMotion.reset(holder.itemView);
+        super.onViewRecycled(holder);
     }
 
     static class Holder extends RecyclerView.ViewHolder {
