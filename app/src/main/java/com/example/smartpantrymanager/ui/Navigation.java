@@ -18,6 +18,7 @@ public final class Navigation {
             Class<?> target;
             if (item.getItemId() == R.id.navPantry) target = MainActivity.class;
             else if (item.getItemId() == R.id.navRecipes) target = SuggestedRecipesActivity.class;
+            else if (item.getItemId() == R.id.navSettings) target = com.example.smartpantrymanager.SettingsActivity.class;
             else return false;
             if (!activity.getClass().equals(target)) {
                 Intent intent = new Intent(activity, target);

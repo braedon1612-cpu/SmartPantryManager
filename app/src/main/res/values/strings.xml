@@ -36,4 +36,10 @@
     <string name="recipes_error">Could not load recipes. Return to your pantry and try again.</string>
     <string name="nav_pantry">Pantry</string>
     <string name="nav_recipes">Recipes</string>
+    <string name="settings_title">Settings</string>
+    <string name="default_unit">Default unit for new ingredients</string>
+    <string name="unit_preference_help">Choose the unit selected when you add a new ingredient. You can change it on each item.</string>
+    <string name="save_settings">Save settings</string>
+    <string name="settings_saved">Settings saved</string>
+    <string name="matching_note">Recipe matching always requires every ingredient in sufficient quantity. Compatible weight and volume units are converted automatically.</string>
 </resources>

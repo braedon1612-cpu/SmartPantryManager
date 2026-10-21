@@ -32,6 +32,14 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         quantityInput = findViewById(R.id.quantityInput);
         unitInput = findViewById(R.id.unitInput);
         ingredientId = getIntent().getLongExtra(EXTRA_INGREDIENT_ID, -1);
+        if (ingredientId <= 0 && state == null) {
+            String preferred = getSharedPreferences(SettingsActivity.PREFERENCES, MODE_PRIVATE)
+                    .getString(SettingsActivity.DEFAULT_UNIT, "g");
+            String[] options = getResources().getStringArray(R.array.pantry_units);
+            for (int index = 0; index < options.length; index++) {
+                if (options[index].equals(preferred)) unitInput.setSelection(index);
+            }
+        }
         findViewById(R.id.backToPantry).setOnClickListener(v -> finish());
         findViewById(R.id.saveIngredient).setOnClickListener(v -> save());
         if (ingredientId > 0) {
